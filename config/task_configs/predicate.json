@@ -1,0 +1,34 @@
+{
+  "verb_predicate": {
+    "penalty": 1.0,
+    "output_fn": {
+      "name": "softmax_classifier_2"
+    },
+    "eval_fns": {
+      "predicate_acc": {
+        "name": "accuracy",
+        "params": {
+          "predictions": {
+            "layer": "verb_predicate",
+            "output": "predictions"
+          },
+          "targets": {
+            "label": "verb_predicate"
+          }
+        }
+      },
+      "predicate_f1": {
+        "name": "fscore",
+        "params": {
+          "predictions": {
+            "layer": "verb_predicate",
+            "output": "predictions"
+          },
+          "targets": {
+            "label": "verb_predicate"
+          }
+        }
+      }
+    }
+  }
+}

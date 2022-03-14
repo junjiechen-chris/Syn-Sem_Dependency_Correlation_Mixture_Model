@@ -1,0 +1,1 @@
+HPARAMS_STR+="learning_rate=6e-2,"

@@ -1,0 +1,7 @@
+{
+  "joint_pos_predicate": 2,
+  "parse_gold": 4,
+  "parse_label": 4,
+  "internal_parse_attention_gold": 5,
+  "srl": 7
+}

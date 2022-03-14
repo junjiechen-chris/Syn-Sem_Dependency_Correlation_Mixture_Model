@@ -1,0 +1,1 @@
+HPARAMS_STR+="use_lexicons=true,"

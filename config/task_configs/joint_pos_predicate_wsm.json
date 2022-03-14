@@ -1,0 +1,66 @@
+{
+  "joint_pos_predicate": {
+    "penalty": 1.0,
+    "output_fn": {
+      "name": "joint_softmax_classifier_wsm",
+      "params": {
+        "joint_maps": {
+          "joint_maps": [
+            "joint_pos_predicate_to_gold_pos",
+            "joint_pos_predicate_to_predicate"
+          ]
+        }
+      }
+    },
+    "eval_fns": {
+      "predicate_acc": {
+        "name": "accuracy",
+        "params": {
+          "predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "predicate_predictions"
+          },
+          "targets": {
+            "label": "predicate"
+          }
+        }
+      },
+      "predicate_f1": {
+        "name": "fscore",
+        "params": {
+          "predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "predicate_predictions"
+          },
+          "targets": {
+            "label": "predicate"
+          }
+        }
+      },
+      "predicate_recall": {
+        "name": "recall",
+        "params": {
+          "predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "predicate_predictions"
+          },
+          "targets": {
+            "label": "predicate"
+          }
+        }
+      },
+      "pos_acc": {
+        "name": "accuracy",
+        "params": {
+          "predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "gold_pos_predictions"
+          },
+          "targets": {
+            "label": "gold_pos"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": {
+    "conll_idx": 2
+  },
+  "word": {
+    "conll_idx": 3,
+    "feature": true,
+    "vocab": "word",
+    "oov": false,
+    "updatable": true
+  },
+  "word_type": {
+    "conll_idx": 3,
+    "feature": true,
+    "vocab": "/home/u00222/Projects/LISA/conll09-all_lang/czech/fasttext/cc.cs.300.vec.shrinked",
+    "converter":  {
+      "name": "lowercase"
+    },
+    "oov": true
+  },
+  "word_elmo": {
+    "conll_idx": 4,
+    "feature": true,
+    "elmo": true
+  },
+  "gold_pos": {
+    "conll_idx": 5,
+    "label": true,
+    "vocab": "gold_pos"
+  },
+
+  "auto_pos": {
+    "conll_idx": 6,
+    "vocab": "gold_pos",
+    "feature": true
+  },
+  "parse_gold": {
+    "conll_idx": [7, 2],
+    "label": true,
+    "converter":  {
+      "name": "parse_roots_self_loop"
+    }
+  },
+  "parse_label": {
+    "conll_idx": 8,
+    "label": true,
+    "vocab": "parse_label"
+  },
+  "parse_benepar": {
+    "conll_idx": [21, 2],
+    "label": true,
+    "converter":  {
+      "name": "parse_roots_self_loop"
+    }
+  },
+  "parse_benepar_label": {
+    "conll_idx": 22,
+    "label": true,
+    "vocab": "parse_benepar_label"
+  },
+  "predicate": {
+    "conll_idx": 26,
+    "label": true,
+    "feature": true,
+    "vocab": "predicate",
+    "converter": {
+      "name": "conll09_binary_predicates"
+    }
+  },
+  "pred_sense": {
+    "conll_idx": 12,
+    "label": true,
+    "feature": true,
+    "converter": {
+      "name": "conll09_cze_predicate_sense"
+    }
+  },
+  "gold_sense": {
+    "conll_idx": 27,
+    "label": true,
+    "feature": true,
+    "converter": {
+      "name": "conll09_cze_predicate_sense"
+    }
+  },
+  "joint_pos_predicate": {
+    "conll_idx": [5, 26],
+    "label": true,
+    "vocab": "joint_pos_predicate",
+    "converter": {
+      "name": "joint_converter",
+      "params": {
+        "component_converters": ["default_converter", "conll09_binary_predicates"]
+      }
+    },
+    "label_components": [
+      "gold_pos",
+      "predicate"
+    ]
+  },
+  "srl": {
+    "conll_idx": [36, -1],
+    "type": "range",
+    "label": true,
+    "vocab": "srl",
+    "converter": {
+      "name": "idx_range_converter"
+    }
+  }
+}

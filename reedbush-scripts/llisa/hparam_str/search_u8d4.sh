@@ -1,0 +1,1 @@
+HPARAMS_STR+="lstm_search_up_depth=8,lstm_search_down_depth=4,"

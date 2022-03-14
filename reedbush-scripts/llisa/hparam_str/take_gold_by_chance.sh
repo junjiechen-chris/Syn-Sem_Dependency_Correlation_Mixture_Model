@@ -1,0 +1,1 @@
+HPARAMS_STR+="take_gold_by_chance=true,"

@@ -1,0 +1,1 @@
+HPARAMS_STR+="batch_size=8000,"

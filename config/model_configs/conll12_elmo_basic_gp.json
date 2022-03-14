@@ -1,0 +1,68 @@
+{
+ "predicate_mlp_size": 256,
+ "role_mlp_size": 256,
+ "predicate_pred_mlp_size": 256,
+ "linear_aggregation_scorer_mlp_size": 256,
+ "class_mlp_size": 100,
+ "attn_mlp_size": 500,
+ "hparams": {
+   "label_smoothing": 0.1,
+   "input_dropout": 0.8,
+   "mlp_dropout": 0.9,
+   "bilinear_dropout": 0.9,
+   "attn_dropout": 0.9,
+   "ff_dropout": 0.9,
+   "prepost_dropout": 0.8,
+   "eval_throttle_secs": 1800,
+   "moving_average_decay": 0.0,
+   "gradient_clip_norm": 1.0,
+   "learning_rate": 0.04,
+   "decay_rate": 1.5,
+   "warmup_steps": 8000,
+   "beta1": 0.9,
+   "beta2": 0.98,
+   "epsilon": 1e-12,
+   "use_nesterov": true,
+   "batch_size": 5376,
+   "is_token_based_batching": true,
+   "special_attention_mode": "my_discounting",
+   "cwr": "ELMo"
+ },
+ "layers": {
+   "type": "transformer",
+   "num_heads": 8,
+   "head_dim": 64,
+   "ff_hidden_size": 1024
+ },
+ "embeddings": {
+   "word_type": {
+     "embedding_dim": 100,
+     "pretrained_embeddings": "embeddings/glove.6B.100d.txt"
+   },
+   "predicate": {
+     "embedding_dim": 100
+   }
+ },
+ "cached_cwr": {
+   "train-set": {
+     "embedding_dim": 1024,
+     "embedding_layers": 3,
+     "cached_embeddings": "embeddings/train.plain.hdf5"
+   },
+   "dev-set": {
+     "embedding_dim": 1024,
+     "embedding_layers": 3,
+     "cached_embeddings": "embeddings/dev.plain.hdf5"
+   },
+   "test.wsj": {
+     "embedding_dim": 1024,
+     "embedding_layers": 3,
+     "cached_embeddings": "embeddings/test.plain.hdf5"
+   }
+ },
+ "inputs": {
+   "word_type": "embeddings",
+   "word_elmo": "cached_embeddings",
+   "predicate": "embeddings"
+ }
+}

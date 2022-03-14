@@ -1,0 +1,1 @@
+HPARAMS_STR+="double_down=true,double_down_repeat=4,"

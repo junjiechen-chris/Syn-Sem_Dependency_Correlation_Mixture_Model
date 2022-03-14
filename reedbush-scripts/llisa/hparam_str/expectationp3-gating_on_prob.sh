@@ -1,0 +1,1 @@
+HPARAMS_STR+="head_label_aggregation=gating_on_prob,use_labeled_adjacency_mtx_hparams_option=True,use_strength_bias=False,label_score_aggregation=expectationp3,special_attention_mode=my_discounting_ns,"

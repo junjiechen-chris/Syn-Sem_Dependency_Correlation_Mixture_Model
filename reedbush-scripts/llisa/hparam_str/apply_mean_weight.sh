@@ -1,0 +1,1 @@
+HPARAMS_STR+="apply_mean_weight=true,"

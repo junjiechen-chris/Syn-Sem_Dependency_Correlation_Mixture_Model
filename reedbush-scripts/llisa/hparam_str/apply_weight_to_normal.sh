@@ -1,0 +1,1 @@
+HPARAMS_STR+="apply_weight_to_normal=true,"

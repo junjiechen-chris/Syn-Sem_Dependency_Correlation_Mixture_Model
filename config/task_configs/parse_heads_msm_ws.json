@@ -1,0 +1,15 @@
+{
+  "parse_gold": {
+    "penalty": 0.2,
+    "output_fn": {
+      "name": "parse_bilinear_msm",
+      "params": {
+      }
+    },
+    "eval_fns": {
+      "head_accuracy": {
+        "name": "accuracy"
+      }
+    }
+  }
+}

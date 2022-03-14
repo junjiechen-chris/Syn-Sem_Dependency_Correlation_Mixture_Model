@@ -1,0 +1,1 @@
+HPARAMS_STR+="hard_pruning=true,"

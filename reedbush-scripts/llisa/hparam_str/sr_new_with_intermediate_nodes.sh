@@ -1,0 +1,1 @@
+HPARAMS_STR+="self_recurrent_new_with_intermediate_nodes=true,"

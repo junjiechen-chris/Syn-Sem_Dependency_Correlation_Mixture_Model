@@ -1,0 +1,1 @@
+HPARAMS_STR+="bilstm=true,"

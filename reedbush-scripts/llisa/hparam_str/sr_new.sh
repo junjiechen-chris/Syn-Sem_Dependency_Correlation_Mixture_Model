@@ -1,0 +1,1 @@
+HPARAMS_STR+="self_recurrent_new=true,"

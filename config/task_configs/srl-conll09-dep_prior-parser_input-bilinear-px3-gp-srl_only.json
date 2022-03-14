@@ -1,0 +1,172 @@
+{
+  "srl": {
+    "penalty": 3.0,
+    "token_take_mask": {
+      "layer": "joint_pos_predicate",
+      "output": "predicate_predictions"
+    },
+    "output_fn": {
+      "name": "srl_bilinear_dep_prior_bilinear",
+      "params": {
+        "predicate_targets": {
+          "label": "predicate"
+        },
+        "predicate_preds_train": {
+          "label": "predicate"
+        },
+        "predicate_preds_eval": {
+          "label": "predicate"
+        },
+        "parse_label_predictions": {
+            "layer": "parse_label",
+            "output": "scores"
+        },
+        "parse_label_targets": {
+            "layer": "parse_label",
+            "output": "scores"
+        },
+        "parse_head_predictions": {
+            "layer": "parse_gold",
+            "output": "scores"
+        },
+        "parse_head_targets": {
+            "layer": "parse_gold",
+            "output": "scores"
+        },
+        "pos_predictions": {
+          "layer": "joint_pos_predicate",
+          "output": "gold_pos_predictions"
+        },
+        "pos_targets": {
+            "label": "gold_pos"
+        },
+        "pos_mlp": {
+            "layer": "joint_pos_predicate",
+          "output": "hidden"
+        }
+      }
+    },
+    "eval_fns": {
+      "srl_f1": {
+        "name": "conll09_srl_eval_srl_only",
+        "params": {
+          "gold_srl_eval_file": {
+            "value": "##save_dir##/srl_gold.txt"
+          },
+          "pred_srl_eval_file": {
+            "value": "##save_dir##/srl_preds.txt"
+          },
+          "reverse_maps": {
+            "reverse_maps": [
+              "word",
+              "srl",
+              "gold_pos",
+              "parse_label",
+              "predicate"
+            ]
+          },
+          "targets": {
+            "layer": "srl",
+            "output": "targets"
+          },
+          "predicate_targets": {
+            "label": "predicate"
+          },
+          "words": {
+            "feature": "word"
+          },
+          "predicate_predictions": {
+            "label": "predicate"
+          },
+          "pos_predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "gold_pos_predictions"
+          },
+          "pos_targets": {
+            "label": "gold_pos"
+          },
+          "parse_label_predictions": {
+            "layer": "parse_label",
+            "output": "predictions"
+          },
+          "parse_label_targets": {
+            "label": "parse_label"
+          },
+          "parse_head_predictions": {
+            "layer": "parse_gold",
+            "output": "predictions"
+          },
+          "parse_head_targets": {
+            "label": "parse_gold"
+          },
+          "pred_sense": {
+            "label": "pred_sense"
+          },
+          "gold_sense": {
+            "label": "gold_sense"
+          }
+        }
+      },
+      "srl_all": {
+        "name": "conll09_srl_eval_all_srl_only",
+        "params": {
+          "gold_srl_eval_file": {
+            "value": "##save_dir##/srl_gold.txt"
+          },
+          "pred_srl_eval_file": {
+            "value": "##save_dir##/srl_preds.txt"
+          },
+          "reverse_maps": {
+            "reverse_maps": [
+              "word",
+              "srl",
+              "gold_pos",
+              "parse_label",
+              "predicate"
+            ]
+          },
+         "targets": {
+            "layer": "srl",
+            "output": "targets"
+          },
+          "predicate_targets": {
+            "label": "predicate"
+          },
+          "words": {
+            "feature": "word"
+          },
+          "predicate_predictions": {
+            "label": "predicate"
+          },
+          "pos_predictions": {
+            "layer": "joint_pos_predicate",
+            "output": "gold_pos_predictions"
+          },
+          "pos_targets": {
+            "label": "gold_pos"
+          },
+          "parse_label_predictions": {
+            "layer": "parse_label",
+            "output": "predictions"
+          },
+          "parse_label_targets": {
+            "label": "parse_label"
+          },
+          "parse_head_predictions": {
+            "layer": "parse_gold",
+            "output": "predictions"
+          },
+          "parse_head_targets": {
+            "label": "parse_gold"
+          },
+          "pred_sense": {
+            "label": "pred_sense"
+          },
+          "gold_sense": {
+            "label": "gold_sense"
+          }
+        }
+      }
+    }
+  }
+}

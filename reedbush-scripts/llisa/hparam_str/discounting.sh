@@ -1,0 +1,1 @@
+HPARAMS_STR+="parse_dep_injection=discounting,special_attention_mode=my_discounting,"

@@ -1,0 +1,373 @@
+{
+  "internal_parse_attention": {
+    "attention_fns_internal_parse_attention": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 1,
+        "params": {
+          "train_attention_aggregation": {
+            "label": {
+              "parse_gold": "one_hot"
+            }
+          },
+          "eval_attention_aggregation": {
+            "output": {
+              "parse_gold": "scores"
+            }
+          }
+        }
+      }
+    }
+  },
+  "internal_parse_attention_gold": {
+    "attention_fns_internal_parse_attention": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 1,
+        "params": {
+          "train_attention_aggregation": {
+            "label": {
+              "parse_gold": "one_hot"
+            }
+          },
+          "eval_attention_aggregation": {
+            "label": {
+              "parse_gold": "one_hot"
+            }
+          }
+        }
+      }
+    }
+  },
+  "internal_parse_attention_benepar": {
+    "attention_fns_internal_parse_attention": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 1,
+        "params": {
+          "train_attention_aggregation": {
+            "label": {
+              "parse_gold": "one_hot"
+            }
+          },
+          "eval_attention_aggregation": {
+            "label": {
+              "parse_bert_benepar": "one_hot"
+            }
+          }
+        }
+      }
+    }
+  },
+  "internal_parse_attention_3h": {
+    "attention_fns_internal_parse_attention": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "label": {
+              "parse_gold": "one_hot"
+            }
+          },
+          "eval_attention_aggregation": {
+            "output": {
+              "parse_gold": "scores"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "internal_labeled_chain_root_attention_up": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_root_up_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_root_up_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_root_incomplete_attention_up": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_void_up_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_void_up_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "internal_labeled_chain_attention_up2updown2": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 2,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    },
+   "attention_fns_updown": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 2,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_een_kup1down_mtx_1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_een_kup1down_mtx_1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_attention_up": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_attention_up_pred": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_attention_up1": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 1,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "outputs": [
+              {
+                "sources": {
+                  "parse_gold": "scores",
+                  "parse_label": "scores"
+                },
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_attention_up1_gold": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 1,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "internal_labeled_chain_attention_up_gold": {
+   "attention_fns_up": {
+      "parse_dep": {
+        "name": "pass_through",
+        "length": 3,
+        "params": {
+          "train_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          },
+          "eval_attention_aggregation": {
+            "labels": [
+              {
+                "sources": [
+                  "parse_gold",
+                  "parse_label"
+                ],
+                "transformation_fn": "get_labeled_adjacent_mtx_u1"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+
+
+
+}

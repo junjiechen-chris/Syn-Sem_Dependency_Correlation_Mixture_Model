@@ -1,0 +1,1 @@
+HPARAMS_STR+="new_updown_search=true,"

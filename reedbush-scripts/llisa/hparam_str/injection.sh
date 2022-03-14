@@ -1,0 +1,1 @@
+HPARAMS_STR+="parse_dep_injection=injection,special_attention_mode=my_injection,"

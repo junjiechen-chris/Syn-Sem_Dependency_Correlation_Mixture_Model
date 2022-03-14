@@ -1,0 +1,1 @@
+HPARAMS_STR+="use_gumbel_max_on_input=true,"

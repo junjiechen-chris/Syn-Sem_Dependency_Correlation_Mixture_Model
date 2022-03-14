@@ -1,0 +1,1 @@
+HPARAMS_STR+="latent_hidden_size=128,"

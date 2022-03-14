@@ -1,0 +1,1 @@
+HPARAMS_STR+="layer_norm_to_heads=true,"
