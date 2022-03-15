@@ -35,5 +35,5 @@ Running experiments
 Please download the saved checkpoint [here], extracting the checkpoits
 run the command stored in the "eval.cmd" file. For example, you can find the following command in `conll-eng-mm5-fasttext.zip`.
 ```
-singularity exec --nv <path_to_container> bin/evaluate-exported.sh config/llisa/e2e/fasttext/conll09-eng-sa-small-dep_prior-par_inp-bilinear-gp-ll.conf --save_dir <path_to_model>/best_checkpoint --num_gpus 1 --hparams  mixture_model=5
+bin/evaluate-exported.sh config/llisa/e2e/fasttext/conll09-eng-sa-small-dep_prior-par_inp-bilinear-gp-ll.conf --save_dir <path_to_model>/best_checkpoint --num_gpus 1 --hparams  mixture_model=5
 ```
