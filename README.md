@@ -32,7 +32,7 @@ make correct_synt_idx
 
 Running experiments
 -------------------------
-Please download the saved model files [here](https://1drv.ms/u/s!ApGS4YfR5gHnhalkM7vGYlwPU7UaAw?e=o8NKjn).
+Please download the saved model files [here](https://1drv.ms/u/s!ApGS4YfR5gHnhalRwBxNxU98Biw17g?e=hJLKxa).
 run the command stored in the "eval.cmd" file in each model file. For example, you can find the following command in `conll-eng-mm5-fasttext.zip`.
 ```
 bin/evaluate-exported.sh config/llisa/e2e/fasttext/conll09-eng-sa-small-dep_prior-par_inp-bilinear-gp-ll.conf --save_dir <path_to_model>/best_checkpoint --num_gpus 1 --hparams  mixture_model=5
