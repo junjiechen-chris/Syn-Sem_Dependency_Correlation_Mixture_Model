@@ -1,5 +1,5 @@
 This is the code repository for reproducing the result of our ACL 2022 paper [Modeling Syntactic-Semantic Dependency Correlations in Semantic Role Labeling Using Mixture Models](). 
-We developed the code on the codebase of [Linguistically-Informed Self-Attention](https://github.com/ChristoMartin/LISA) (LISA) and added token-based batching component from [Tensor2Tensor](https://github.com/tensorflow/tensor2tensor). 
+We developed the code on the codebase of [Linguistically-Informed Self-Attention](https://github.com/strubell/LISA) (LISA) and added token-based batching component from [Tensor2Tensor](https://github.com/tensorflow/tensor2tensor). 
 
 
 Requirements
